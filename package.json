@@ -39,5 +39,14 @@
     "template",
     "html",
     "linkedin"
-  ]
+  ],
+  "readme": "## About\n\nThis task renders Dust templates against a context to produce HTML.\n\n## Getting Started\n\nInstall this plugin with the command:\n\n```js\nnpm install grunt-dust-html\n```\n\nNext, add this line to your project's grunt file:\n\n```js\ngrunt.loadNpmTasks(\"grunt-dust-html\");\n```\n\nLastly, add the configuration settings (see below) to your grunt file.\n\n## Documentation\n\nThis task has two required properties, `src` and `dest`. `src` is the path to your source file and `dest` is the file this task will write to (relative to the grunt.js file). If this file already exists **it will be overwritten**.\n\nAn example configuration looks like this:\n\n```js\ngrunt.initConfig({\n  dusthtml: {\n    dist: {\n      src: \"src/home.dust\",\n      dest: \"dist/home.html\",\n\n      options: {\n        // see below for options. this is optional.\n      }\n    }\n  }\n});\n```\n\n### Optional Configuration Properties\n\nThis plugin can be customized by specifying the following options:\n\n* `whitespace` (Boolean): Whether or not to preserve whitespace. `false` by default.\n* `partialsDir` (String|Array): Path to one or more directories that contain your partials.\n* `defaultExt` (String): The default template extension of your partials. Defaults to `.dust`.\n* `module` (String): The name of the Dust module to use. Defaults to\n`dustjs-linkedin` but can also be `dust` for plain ol' dust, or\n`dustjs-helpers` for the LinkedIn Dust build with helpers. If this option is\nanything other than the default, make sure you have installed the module via\n`npm install`.\n* `context` (Object|String): A JavaScript object to render the template against. This option supports two different types:\n\n**String**: the location to a file containing valid JSON:\n\n```js\ncontext: \"path/to/file.json\"\n```\n\n**Object**: a regular ol' JavaScript object:\n\n```js\ncontext: {\n  pageTitle: \"My Awesome Website\"\n}\n```\n\n**Array**: an array of contexts, either string (files to parse) or JavaScript objects, or both. Each item in the array will be merged into a single context and rendered against the template:\n    \n```js\ncontext: [\n  \"path/to/context.json\",\n  \"path/to/another/context.json\",\n  { more: \"data\" }\n]\n```\n\n### FAQ\n\n1. *Why does the output say undefined?*  \nMost likely dust is trying to include a file but it can't resove the path properly. Make sure you're setting a `basePath` option.\n\n### Tests\n\nRun `npm test`.\n",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/ehynds/grunt-dust-html",
+  "_id": "grunt-dust-html@0.2.1",
+  "dist": {
+    "shasum": "9050fdb240e067108bcd6468e267f8fc80903e94"
+  },
+  "_from": "grunt-dust-html@",
+  "_resolved": "https://registry.npmjs.org/grunt-dust-html/-/grunt-dust-html-0.2.1.tgz"
 }

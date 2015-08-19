@@ -85,3 +85,6 @@ Most likely dust is trying to include a file but it can't resove the path proper
 ### Tests
 
 Run `npm test`.
+
+### FIX BY EDWARD MAESEN:
+fix async promise handling to ensure all files are processed before `done` is called.
